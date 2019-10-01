@@ -163,12 +163,12 @@ public class MoveFiles extends javax.swing.JFrame {
         File startingDirectory = new File(StartingPath.getText());
         String startingPath = StartingPath.getText();
         String destinationPath = DestinationPath.getText();
-        if (StartingPath.equals(destinationPath)) {
+        if (startingPath.equals(destinationPath)) {
             JOptionPane.showMessageDialog(rootPane, "Los directorios no pueden ser iguales");
         } else if (startingPath.equals("") || destinationPath.equals("")) {
             JOptionPane.showMessageDialog(rootPane, "Alguno de los directorios no ha sido seleccionado");
         } else {
-            List<File> files = GetFiles(new ArrayList<File>(), startingDirectory);
+            List<File> files = GetFiles(new ArrayList<>(), startingDirectory);
             boolean isCorrect = false;
             for (File file : files) {
                 try {
